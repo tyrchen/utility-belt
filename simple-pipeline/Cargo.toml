@@ -10,7 +10,7 @@ homepage = "https://github.com/tyrchen/utility-belt"
 description = """
 A simple run-to-completion pipeline.
 """
-readme = "../README.md"
+readme = "./README.md"
 categories = ["development-tools"]
 keywords = ["pipeline"]
 

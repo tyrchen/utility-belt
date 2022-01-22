@@ -10,7 +10,7 @@ homepage = "https://github.com/tyrchen/utility-belt"
 description = """
 A simple pubsub use dashmap and mpsc channel.
 """
-readme = "../README.md"
+readme = "./README.md"
 categories = ["development-tools"]
 keywords = ["pubsub"]
 

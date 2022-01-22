@@ -10,7 +10,7 @@ homepage = "https://github.com/tyrchen/utility-belt"
 description = """
 A simple fake socket for testing purpose.
 """
-readme = "../README.md"
+readme = "./README.md"
 categories = ["development-tools"]
 keywords = ["axum", "socket", "test"]
 
