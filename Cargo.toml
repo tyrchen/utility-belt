@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "fake-socket",
+    "simple-pipeline",
+    "simple-pubsub",
+]
+
+[profile.dev]
+debug = 1

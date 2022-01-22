@@ -1,0 +1,24 @@
+[package]
+name = "simple-pipeline"
+version = "0.6.0"
+edition = "2021"
+authors = ["Tyr Chen <tyr.chen@gmail.com>"]
+license = "MIT"
+documentation = "https://docs.rs/simple-pipeline"
+repository = "https://github.com/tyrchen/utility-belt"
+homepage = "https://github.com/tyrchen/utility-belt"
+description = """
+A simple run-to-completion pipeline.
+"""
+readme = "../README.md"
+categories = ["development-tools"]
+keywords = ["pipeline"]
+
+[lib]
+doctest = false
+
+[dependencies]
+async-recursion = "1"
+async-trait = "0.1"
+derive-new = "0.5"
+thiserror = "1"

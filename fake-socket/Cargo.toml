@@ -1,0 +1,23 @@
+[package]
+name = "fake-socket"
+version = "0.1.0"
+edition = "2021"
+authors = ["Tyr Chen <tyr.chen@gmail.com>"]
+license = "MIT"
+documentation = "https://docs.rs/fake-socket"
+repository = "https://github.com/tyrchen/utility-belt"
+homepage = "https://github.com/tyrchen/utility-belt"
+description = """
+A simple fake socket for testing purpose.
+"""
+readme = "../README.md"
+categories = ["development-tools"]
+keywords = ["axum", "socket", "test"]
+
+[lib]
+doctest = false
+
+[dependencies]
+futures = "0.3"
+pin-project = "1"
+tokio = { version = "1", features = ["sync"] }

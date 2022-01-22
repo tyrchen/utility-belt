@@ -1,0 +1,27 @@
+[package]
+name = "simple_pubsub"
+version = "0.5.0"
+edition = "2021"
+authors = ["Tyr Chen <tyr.chen@gmail.com>"]
+license = "MIT"
+documentation = "https://docs.rs/simple-pubsub"
+repository = "https://github.com/tyrchen/utility-belt"
+homepage = "https://github.com/tyrchen/utility-belt"
+description = """
+A simple pubsub use dashmap and mpsc channel.
+"""
+readme = "../README.md"
+categories = ["development-tools"]
+keywords = ["pubsub"]
+
+[lib]
+doctest = false
+
+[dependencies]
+# Should not use 5 until a fix for https://github.com/xacrimon/dashmap/issues/167
+dashmap = "4"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+
+[dev-dependencies]
+anyhow = "1"
