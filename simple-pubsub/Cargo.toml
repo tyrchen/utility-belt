@@ -1,6 +1,6 @@
 [package]
 name = "simple_pubsub"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2021"
 authors = ["Tyr Chen <tyr.chen@gmail.com>"]
 license = "MIT"
@@ -20,8 +20,9 @@ doctest = false
 [dependencies]
 # Should not use 5 until a fix for https://github.com/xacrimon/dashmap/issues/167
 dashmap = "4"
-tokio = { version = "1", features = ["full"] }
+tokio = { version = "1", features = ["sync", "rt-multi-thread"] }
 tracing = "0.1"
 
 [dev-dependencies]
 anyhow = "1"
+tokio = { version = "1", features = ["full"] }
