@@ -378,8 +378,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "simple-pubsub"
-version = "0.5.1"
+name = "simple_pubsub"
+version = "0.5.2"
 dependencies = [
  "anyhow",
  "dashmap",
