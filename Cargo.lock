@@ -378,7 +378,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "simple_pubsub"
+name = "simple-pubsub"
 version = "0.5.1"
 dependencies = [
  "anyhow",
