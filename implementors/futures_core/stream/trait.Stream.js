@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["fake_socket"] = [{"text":"impl&lt;T, E&gt; Stream for <a class=\"struct\" href=\"fake_socket/struct.ReceiverStream.html\" title=\"struct fake_socket::ReceiverStream\">ReceiverStream</a>&lt;T, E&gt;","synthetic":false,"types":["fake_socket::ReceiverStream"]},{"text":"impl&lt;T, E&gt; Stream for <a class=\"struct\" href=\"fake_socket/struct.FakeSocket.html\" title=\"struct fake_socket::FakeSocket\">FakeSocket</a>&lt;T, E&gt;","synthetic":false,"types":["fake_socket::FakeSocket"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

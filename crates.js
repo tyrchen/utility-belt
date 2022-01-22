@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["fake_socket","simple_pipeline","simple_pubsub"];
