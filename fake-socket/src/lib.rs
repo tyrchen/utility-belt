@@ -28,6 +28,11 @@ pub struct FakeSocket<T, E> {
     receiver: ReceiverStream<T, E>,
 }
 
+pub struct FakeClient<T> {
+    sender: mpsc::UnboundedSender<T>,
+    receiver: mpsc::UnboundedReceiver<T>,
+}
+
 impl<T, E> ReceiverStream<T, E> {
     pub fn new(inner: mpsc::UnboundedReceiver<T>) -> Self {
         Self {
@@ -111,4 +116,40 @@ impl<T, E> Sink<T> for FakeSocket<T, E> {
     fn poll_close(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
         self.project().sender.poll_close(cx)
     }
+}
+
+impl<T> FakeClient<T> {
+    pub fn new(sender: mpsc::UnboundedSender<T>, receiver: mpsc::UnboundedReceiver<T>) -> Self {
+        Self { sender, receiver }
+    }
+
+    pub fn send(&self, msg: T) -> Result<(), mpsc::error::SendError<T>> {
+        self.sender.send(msg)
+    }
+
+    pub async fn recv(&mut self) -> Option<T> {
+        self.receiver.recv().await
+    }
+}
+
+/// Create fake client and fake socket. The socket could be sent to the function to be tested.
+/// For example:
+/// ```
+/// let (mut client, socket) = create_fake_connect();
+/// tokio::spawn(async move {
+///     handle_socket(socket, state).await;
+/// });
+///
+/// let msg = ...;
+/// client.send(msg).await;
+/// if let Some(msg1) = client.recv().await {
+///    assert_eq!(msg1, ...);
+/// }
+/// ```
+pub fn create_fake_connection<T, E>() -> (FakeClient<T>, FakeSocket<T, E>) {
+    let (tx1, rx1) = mpsc::unbounded_channel();
+    let (tx2, rx2) = mpsc::unbounded_channel();
+    let socket = FakeSocket::<T, E>::new(rx1, tx2);
+    let client = FakeClient::new(tx1, rx2);
+    (client, socket)
 }
