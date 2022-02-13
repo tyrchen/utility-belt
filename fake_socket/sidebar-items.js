@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["FakeSocket",""],["ReceiverStream",""],["SenderSink",""]]});
+initSidebarItems({"fn":[["create_fake_connection","Create fake client and fake socket. The socket could be sent to the function to be tested. For example:"]],"struct":[["FakeClient",""],["FakeSocket",""],["ReceiverStream",""],["SenderSink",""]]});
